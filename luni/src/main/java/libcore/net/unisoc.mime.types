@@ -1,0 +1,53 @@
+
+###############################################################################
+#
+#  Unisoc-specific MIME type mappings
+#
+#  MIME types that Android has manually added or historically chosen to
+#  override, and which take precidence over any upstream mime.types.
+#
+###############################################################################
+audio/opus opus
+audio/mid mmid
+audio/x-midi xmid
+audio/bp3 bp3
+audio/wav wav
+audio/x-aac aac
+audio/imy imy
+video/flv flv
+video/amc amc
+video/k3g k3g
+
+audio/3gpp2 3g2
+video/3g2 3g2
+audio/x-mp3 mp3
+audio/mpeg3 mp3
+audio/mp3 mp3
+audio/mpg3 mp3
+
+image/bmp bmp drmbmp
+image/jpeg jpg! jpe
+audio/mp4 m4a m4b m4r
+audio/mpeg mp3! m4a m4r mp2
+video/mp4 mp4 m4v
+video/avi avi divx
+video/mp2p mpeg vob
+
+application/application apk
+application/vnd.oma.drm.message dm
+application/vnd.oma.drm.content dcf
+
+# The preferred mimetype of the file extension, also need to follow the aosp.
+application/vnd.android.package-archive apk
+image/x-ms-bmp bmp!
+audio/imelody imy
+audio/aac aac!
+video/mpeg mpeg!
+video/3gpp 3gpp!
+video/3gpp2 3g2
+
+# Need to adapt MimeUtil tests.
+video/x-flv flv
+
+video/f4v f4v
+video/x-f4v f4v

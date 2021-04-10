@@ -19,6 +19,7 @@ package libcore.net;
 import dalvik.annotation.compat.UnsupportedAppUsage;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Locale;
@@ -50,11 +51,14 @@ public final class MimeUtils {
     static {
         parseTypes("mime.types");
         parseTypes("android.mime.types");
+        parseTypes("unisoc.mime.types");//unisoc mimetype/extension mapping
     }
 
     private static void parseTypes(String resource) {
+        final InputStream inputStream = MimeUtils.class.getResourceAsStream(resource);
+        if (inputStream == null) return;//Avoid null pointer
         try (BufferedReader r = new BufferedReader(
-                new InputStreamReader(MimeUtils.class.getResourceAsStream(resource)))) {
+                new InputStreamReader(inputStream))) {
             String line;
             while ((line = r.readLine()) != null) {
                 int commentPos = line.indexOf('#');
